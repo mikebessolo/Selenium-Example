@@ -1,4 +1,5 @@
 # Selenium-Example
+The following test cases were created from the website https://www.saucedemo.com/.
 
 **Test Case 1: User Login – Valid Credentials**
 
