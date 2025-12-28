@@ -1,5 +1,7 @@
 # Selenium-Example
 
+**Test Case 1: User Login – Valid Credentials**
+
 **Test Case Objective**
 
 Verify that a registered user can successfully log in with valid credentials.
@@ -25,3 +27,29 @@ Application is accessible
 **Expected Result**
 
 User is authenticated and redirected to the dashboard.
+
+___________________________________________________________________________________
+
+**Test Case 2: Add Item to Cart & Verify Count**
+
+**Test Case Objective**
+
+Verify that a user can add an item to the cart and cart count updates correctly.
+
+**Preconditions**
+
+User is logged in
+
+Product catalog is available
+
+**Test Steps**
+
+1- Navigate to products page
+
+2- Click “Add to Cart” on a product
+
+3- Verify cart badge increments
+
+**Expected Result**
+
+Cart count increases to reflect added item.
