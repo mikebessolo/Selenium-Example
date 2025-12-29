@@ -1,0 +1,17 @@
+from playwright.sync_api import sync_playwright, expect
+
+def test_add_item_to_cart_updates_count():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+
+        page.goto("https://example-app.com/products")
+
+        # Click the first "Add to Cart" button (adjust selector to your app)
+        page.locator(".add-to-cart").first.click()
+
+        # Verify the cart count updates to 1
+        cart_badge = page.locator("#cart-count")
+        expect(cart_badge).to_have_text("1")
+
+        browser.close()
