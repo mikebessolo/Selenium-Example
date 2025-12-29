@@ -1,0 +1,18 @@
+from playwright.sync_api import sync_playwright
+
+def test_login_valid_credentials():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+
+        page.goto("https://example-app.com/login")
+
+        page.fill("#username", "testuser")
+        page.fill("#password", "password123")
+        page.click("button[type='submit']")
+
+        # Wait for a dashboard indicator (URL change, heading, or nav element)
+        page.wait_for_url("**/dashboard")
+        assert "dashboard" in page.url.lower()
+
+        browser.close()
